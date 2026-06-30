@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study — Content Automation | LoopCraft</title>
+  <meta name="description" content="A solo-founder digital consultancy was producing LinkedIn content, a weekly newsletter, and occasional blog posts manually. The founder was spending 8–12…">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://loopcraft-public-docs.vercel.app/case-study-01">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Case Study — Content Automation | LoopCraft">
+  <meta property="og:description" content="A solo-founder digital consultancy was producing LinkedIn content, a weekly newsletter, and occasional blog posts manually. The founder was spending 8–12…">
+  <meta property="og:url" content="https://loopcraft-public-docs.vercel.app/case-study-01">
+  <meta property="og:image" content="https://loopcraft-public-docs.vercel.app/assets/og-default.png">
+  <meta property="og:site_name" content="LoopCraft">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case Study — Content Automation | LoopCraft">
+  <meta name="twitter:description" content="A solo-founder digital consultancy was producing LinkedIn content, a weekly newsletter, and occasional blog posts manually. The founder was spending 8–12…">
+  <meta name="twitter:image" content="https://loopcraft-public-docs.vercel.app/assets/og-default.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Case Study — Content Automation",
+    "description": "A solo-founder digital consultancy was producing LinkedIn content, a weekly newsletter, and occasional blog posts manually. The founder was spending 8–12…",
+    "author": {"@type": "Organization", "name": "LoopCraft", "url": "https://loopcraft.io"},
+    "publisher": {"@type": "Organization", "name": "LoopCraft OÜ", "url": "https://loopcraft.io"},
+    "datePublished": "2026-06-30",
+    "dateModified": "2026-06-30",
+    "mainEntityOfPage": "https://loopcraft-public-docs.vercel.app/case-study-01"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/assets/style.css" as="style">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">LoopCraft</a>
+      <span class="header-label">Documentation</span>
+      <a href="https://loopcraft.io" class="header-cta" target="_blank" rel="noopener">loopcraft.io ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <article id="content" class="prose"></article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 LoopCraft Systems OÜ · Estonian OÜ · EU-registered</span>
+      <a href="https://loopcraft.io" target="_blank" rel="noopener">loopcraft.io</a>
+      <a href="/">All docs</a>
+    </div>
+  </footer>
+
+  <script id="md" type="application/json">"# Case Study 01 — Content Automation for a Digital Consultancy\n**LoopCraft Systems OÜ | Delivery: April–May 2026 | Status: Live in production**\n\n---\n\n> \"We went from spending half a day on content every week to spending 30 minutes reviewing what the system produced. The volume went up, the quality went up, and the founder got their Friday afternoons back.\"\n> — *Founder, Digital Consultancy (anonymised)*\n\n---\n\n## The Situation\n\nA solo-founder digital consultancy was producing LinkedIn content, a weekly newsletter, and occasional blog posts manually. The founder was spending **8–12 hours per week** on content — researching topics, writing drafts, formatting for each platform, scheduling, and tracking performance.\n\nThe content was inconsistent: good weeks when there was time, silent weeks when client work took over. The newsletter had missed 3 consecutive sends. LinkedIn engagement had dropped 40% in 60 days from inconsistency alone.\n\nThe founder knew content was their primary lead generation channel — 6 of their last 8 clients had cited a LinkedIn post or newsletter as their first point of contact. But they couldn't staff it, couldn't afford a content agency, and didn't have time to do it themselves.\n\n**The brief:** Automate content production without losing the founder's voice.\n\n---\n\n## The Challenge\n\nThis wasn't a simple scheduling problem. Three specific constraints made it hard:\n\n1. **Voice preservation** — The founder had a distinct, direct writing style built over 3 years. Generic AI content would undo that brand equity instantly.\n\n2. **Multi-platform formatting** — LinkedIn, newsletter, and blog require fundamentally different structures, lengths, and CTAs. A single content piece couldn't be copy-pasted across all three.\n\n3. **Freshness** — Content needed to reference current events, industry news, and recent client work — not evergreen filler.\n\n---\n\n## The LOOP Framework© Applied\n\n### L — Listen & Learn (3 days)\n\nDiscovery uncovered:\n- **Content inventory:** 18 months of LinkedIn posts, 24 newsletter issues, 6 blog posts — all written by the founder\n- **Voice analysis:** Direct sentences, data-first, never more than 3 paragraphs, always ends with a specific question or action\n- **Pain point:** 6 hours/week on research alone (manually scanning 12 newsletters and 3 RSS feeds)\n- **Existing stack:** Notion (content calendar), Buffer (scheduling), Mailchimp (newsletter), LinkedIn\n\nAI Maturity Score: **34/100** — low automation, high manual dependency, clear opportunity.\n\n### O — Orchestrate & Optimise (4 days)\n\nAgent architecture designed:\n\n```\nSIGNAL (Content Orchestrator)\n├── Research sub-agent → scans 8 curated sources, extracts 3 weekly angles\n├── Writer sub-agent → drafts in founder's voice using 18-month style corpus\n├── Editor sub-agent → checks against 12 brand voice rules\n├── Formatter sub-agent → produces platform-specific versions\n└── Scheduler sub-agent → pushes to Buffer (LinkedIn) + Mailchimp (newsletter)\n```\n\nKey design decision: The writer sub-agent was trained on the founder's existing content corpus, not on generic \"good writing\" principles. The system writes *their* content, not AI content.\n\n### O — Operate & Automate (8 days)\n\n**5 n8n workflows deployed:**\n\n| Workflow | Trigger | Output |\n|----------|---------|--------|\n| Weekly Research Scan | Monday 06:00 | 3 content angles with source links |\n| LinkedIn Post Generator | Monday 08:00 | 3 post drafts (founder picks 1) |\n| Newsletter Builder | Wednesday 09:00 | Full newsletter draft ready for 10-min review |\n| Blog Expansion | Bi-weekly | 800-word blog post from best LinkedIn post |\n| Performance Digest | Friday 16:00 | Engagement stats + what worked this week |\n\nAll drafts sent to founder via Telegram for a **10-minute review and approve** step — human stays in the loop on final output, removed from production.\n\nSupabase memory layer: every published piece logged with engagement data. System learns which angles perform over time.\n\n### P — Prove & Perpetuate (30 days post-launch)\n\n**Results at 30 days:**\n\n| Metric | Before | After | Change |\n|--------|--------|-------|--------|\n| Hours/week on content | 8–12h | 45 min (review only) | **−90%** |\n| LinkedIn posts published | 1.2/week (avg) | 3/week | **+150%** |\n| Newsletter sends | 1/month (missed 3) | Weekly, 0 missed | **100% delivery** |\n| LinkedIn impressions | 1,840/week (avg) | 4,200/week | **+128%** |\n| Newsletter open rate | 34% | 41% | **+7pp** |\n| Inbound leads from content | 0.8/month | 2.4/month | **+200%** |\n\n**ROI at 30 days:**\n- Founder time saved: ~40 hours/month @ conservative €100/hour = **€4,000/month recovered**\n- Engagement uplift estimated at 1 additional qualified lead/month = **€5,500+ pipeline** (roadmap tier)\n- Total system cost: one-time Growth Essential engagement + €0 ongoing (self-hosted n8n)\n- **Payback period: 7 weeks**\n\n---\n\n## What We Delivered\n\n- ✅ 5 production n8n workflows (version-controlled, documented)\n- ✅ Supabase content memory + performance tracking\n- ✅ Operator dashboard — content queue, approval inbox, performance widgets\n- ✅ Full workflow documentation (trigger, logic, edge cases, rollback)\n- ✅ Voice corpus integration — system writes in the founder's style\n- ✅ 30-day monitored launch with weekly optimisation\n\n---\n\n## Key Learnings\n\n**What worked:**\n- Training on existing content corpus (not generic prompts) was the critical differentiator\n- 10-minute human review step maintained quality without killing the time saving\n- Supabase memory enabled the system to improve — by week 4 it was outperforming the founder's own best weeks\n\n**What we'd do differently:**\n- Build the performance feedback loop earlier (we added it in week 3)\n- Include video content from the start — missed a channel that's now a backlog item\n\n---\n\n## Applicability\n\nThis case study directly applies to:\n- Professional services firms spending >5h/week on content\n- B2B companies with a founder-led content strategy\n- Any organisation where content is a lead gen channel but production is a bottleneck\n\n**Relevant LoopCraft service:** Growth Essential — AI-Native Implementation · 4–6 weeks · 5 workflows\n\n---\n\n*Case study details anonymised per client NDA. Full reference available on request for qualified prospects under NDA.*\n\n*LoopCraft Systems OÜ — hello@loopcraftsystems.com*\n"</script>
+  <!-- marked + DOMPurify loaded in order; render fires only after both are ready -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js" integrity="sha384-odPBjvtXVM/5hOYIr3A1dB+flh0c3wAT3bSesIOqEGmyUA4JoKf/YTWy0XKOYAY7" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.11/dist/purify.min.js" integrity="sha384-o44XUELLEnv/iSlA1NWxBweqbD4TSR0qgq2VzVsxtkHS989JJjGKSE9vkfo5MN4K" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var raw  = JSON.parse(document.getElementById('md').textContent);
+      var dirty = marked.parse(raw);
+      document.getElementById('content').innerHTML = DOMPurify.sanitize(dirty);
+    });
+  </script>
+</body>
+</html>
