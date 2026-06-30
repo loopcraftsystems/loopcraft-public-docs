@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Methodology | LoopCraft</title>
+  <meta name="description" content="1. Process audit workshop (2h, async or live) — map current state with…">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://loopcraft-public-docs.vercel.app/methodology">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Delivery Methodology | LoopCraft">
+  <meta property="og:description" content="1. Process audit workshop (2h, async or live) — map current state with…">
+  <meta property="og:url" content="https://loopcraft-public-docs.vercel.app/methodology">
+  <meta property="og:image" content="https://loopcraft-public-docs.vercel.app/assets/og-default.png">
+  <meta property="og:site_name" content="LoopCraft">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Delivery Methodology | LoopCraft">
+  <meta name="twitter:description" content="1. Process audit workshop (2h, async or live) — map current state with…">
+  <meta name="twitter:image" content="https://loopcraft-public-docs.vercel.app/assets/og-default.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Delivery Methodology",
+    "description": "1. Process audit workshop (2h, async or live) — map current state with…",
+    "author": {"@type": "Organization", "name": "LoopCraft", "url": "https://loopcraft.io"},
+    "publisher": {"@type": "Organization", "name": "LoopCraft OÜ", "url": "https://loopcraft.io"},
+    "datePublished": "2026-06-30",
+    "dateModified": "2026-06-30",
+    "mainEntityOfPage": "https://loopcraft-public-docs.vercel.app/methodology"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/assets/style.css" as="style">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">LoopCraft</a>
+      <span class="header-label">Documentation</span>
+      <a href="https://loopcraft.io" class="header-cta" target="_blank" rel="noopener">loopcraft.io ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <article id="content" class="prose"></article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 LoopCraft Systems OÜ · Estonian OÜ · EU-registered</span>
+      <a href="https://loopcraft.io" target="_blank" rel="noopener">loopcraft.io</a>
+      <a href="/">All docs</a>
+    </div>
+  </footer>
+
+  <script id="md" type="application/json">"# LoopCraft Delivery Methodology\n\n## Centralize → Automate → Visualize\n\n---\n\n## Phase 1: CENTRALIZE\n\n**Goal:** Map all inputs, data sources, and manual touchpoints in the target process.\n\n**Activities:**\n1. Process audit workshop (2h, async or live) — map current state with client\n2. Tool inventory — what systems are involved (CRM, helpdesk, spreadsheets, email)\n3. Data flow diagram — where does data enter, transform, and exit\n4. Friction identification — exact steps that are manual, slow, or error-prone\n5. Prioritization matrix — impact vs. effort for each automation opportunity\n\n**Output:** Friction Map + Automation Roadmap document  \n**Duration:** 3–5 days (L phase of LOOP Framework©)\n**Tier:** Starter — AI Readiness Audit (see `04-finance/pricing-tiers.md`)\n\n---\n\n## Phase 2: AUTOMATE\n\n**Goal:** Build, test, and deploy the automation layer.\n\n**Activities:**\n1. Architecture design — n8n workflow blueprint signed off by client\n2. Credential setup — API keys, OAuth, webhook endpoints\n3. Core workflow build — logic, routing, error handling\n4. AI layer integration — Claude API for drafting, scoring, or enrichment\n5. Staging test — end-to-end with synthetic data\n6. Edge case handling — null values, API timeouts, rate limits\n7. Client UAT — 3 business days of parallel running\n\n**Output:** Live workflows in client's n8n instance + full documentation  \n**Duration:** 4–8 weeks depending on tier\n**Tier:** Growth Essential or Growth Full (see `04-finance/pricing-tiers.md`)\n\n---\n\n## Phase 3: VISUALIZE\n\n**Goal:** Give the client real-time visibility and the ability to manage and iterate.\n\n**Activities:**\n1. Dashboard build — Supabase + Metabase or custom Next.js view\n2. KPI definition — what metrics prove the automation is working\n3. Alert configuration — Slack/email notifications for failures or anomalies\n4. Runbook creation — step-by-step doc for client team to manage the system\n5. Video walkthroughs — Loom recordings for every workflow\n6. Handoff session — 2h live session with client team\n\n**Output:** Dashboard, runbook, video docs, handoff certificate  \n**Duration:** 5 business days (included in Growth tiers — see `04-finance/pricing-tiers.md`)\n\n---\n\n## Full Engagement Timeline\n\n| Week | Phase | Key Milestone |\n|------|-------|--------------|\n| 1 | Centralize | Friction map delivered |\n| 2–3 | Automate | Workflows in staging |\n| 4 | Automate (UAT) | Client UAT complete |\n| 5 | Visualize | Dashboard live |\n| 6 | Enablement | Handoff complete |\n\n---\n\n## Quality Standards\n\n- Every workflow has error handling — no silent failures\n- Every automation runs for 5 business days in parallel before fully replacing manual process\n- Client receives: runbook + Loom walkthrough + emergency contact for 30 days post-launch\n- All data EU-hosted — Supabase Frankfurt, no US-based storage of PII\n"</script>
+  <!-- marked + DOMPurify loaded in order; render fires only after both are ready -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js" integrity="sha384-odPBjvtXVM/5hOYIr3A1dB+flh0c3wAT3bSesIOqEGmyUA4JoKf/YTWy0XKOYAY7" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.11/dist/purify.min.js" integrity="sha384-o44XUELLEnv/iSlA1NWxBweqbD4TSR0qgq2VzVsxtkHS989JJjGKSE9vkfo5MN4K" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var raw  = JSON.parse(document.getElementById('md').textContent);
+      var dirty = marked.parse(raw);
+      document.getElementById('content').innerHTML = DOMPurify.sanitize(dirty);
+    });
+  </script>
+</body>
+</html>
