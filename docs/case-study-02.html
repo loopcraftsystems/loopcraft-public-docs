@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study — AI Agent OS | LoopCraft</title>
+  <meta name="description" content="Most solo-founder consultancies hit the same ceiling: you can either do client work or do business development, but not both. Content falls off. Tenders…">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://loopcraft-public-docs.vercel.app/case-study-02">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Case Study — AI Agent OS | LoopCraft">
+  <meta property="og:description" content="Most solo-founder consultancies hit the same ceiling: you can either do client work or do business development, but not both. Content falls off. Tenders…">
+  <meta property="og:url" content="https://loopcraft-public-docs.vercel.app/case-study-02">
+  <meta property="og:image" content="https://loopcraft-public-docs.vercel.app/assets/og-default.png">
+  <meta property="og:site_name" content="LoopCraft">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case Study — AI Agent OS | LoopCraft">
+  <meta name="twitter:description" content="Most solo-founder consultancies hit the same ceiling: you can either do client work or do business development, but not both. Content falls off. Tenders…">
+  <meta name="twitter:image" content="https://loopcraft-public-docs.vercel.app/assets/og-default.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Case Study — AI Agent OS",
+    "description": "Most solo-founder consultancies hit the same ceiling: you can either do client work or do business development, but not both. Content falls off. Tenders…",
+    "author": {"@type": "Organization", "name": "LoopCraft", "url": "https://loopcraft.io"},
+    "publisher": {"@type": "Organization", "name": "LoopCraft OÜ", "url": "https://loopcraft.io"},
+    "datePublished": "2026-06-30",
+    "dateModified": "2026-06-30",
+    "mainEntityOfPage": "https://loopcraft-public-docs.vercel.app/case-study-02"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/assets/style.css" as="style">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">LoopCraft</a>
+      <span class="header-label">Documentation</span>
+      <a href="https://loopcraft.io" class="header-cta" target="_blank" rel="noopener">loopcraft.io ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <article id="content" class="prose"></article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 LoopCraft Systems OÜ · Estonian OÜ · EU-registered</span>
+      <a href="https://loopcraft.io" target="_blank" rel="noopener">loopcraft.io</a>
+      <a href="/">All docs</a>
+    </div>
+  </footer>
+
+  <script id="md" type="application/json">"# Case Study 02 — Building a Multi-Agent Operating System for a Consulting Firm\n**LoopCraft Systems OÜ | Internal deployment | Status: Live in production, June 2026**\n\n---\n\n> \"11 agents. 21 workflows. One person. The goal was to run a consulting firm at full capacity before landing the first client — so the first delivery proves the system, not tests it.\"\n> — *Anton Farias, Founder, LoopCraft Systems OÜ*\n\n---\n\n## The Situation\n\nMost solo-founder consultancies hit the same ceiling: you can either do client work or do business development, but not both. Content falls off. Tenders go unmonitored. Proposals take two days to write. The business stalls not because of demand — but because one person can't run sales, marketing, delivery, compliance, and finance simultaneously.\n\nThe challenge LoopCraft set itself was specific: **build a company that operates at full capacity from day one, before the first client.** If the AI agent OS was good enough to sell, it had to run LoopCraft's own operations first.\n\n**The brief:** Design and deploy a multi-agent OS that handles the full operational surface of a consulting firm — autonomously, with the founder as the only human reviewer.\n\n---\n\n## The Challenge\n\nThree constraints made this non-trivial:\n\n1. **Operational breadth** — A consulting firm touches 11 operational domains simultaneously: orchestration, sales, marketing, delivery, finance, compliance, tender intelligence, DevOps, client success, admin, and local AI. Each needs a different model, memory layer, and trigger logic.\n\n2. **Memory across agents** — For a multi-agent system to work, agents must share context. An outreach agent sending a cold email needs to know the compliance agent already cleared that prospect's sector. Most off-the-shelf automation platforms don't solve this.\n\n3. **Autonomous without being unsupervised** — The system needed to operate without constant input, but never go off-reservation. Every agent needed a human review gate on high-stakes outputs (proposals, contracts, invoices) while running autonomously on low-stakes tasks (content drafts, tender scans, daily logs).\n\n---\n\n## The LOOP Framework© Applied\n\n### L — Listen & Learn (3 days)\n\nFull operational audit:\n- **Process mapping:** 47 recurring tasks across 11 domains identified\n- **Automation potential scored:** 34 tasks fully automatable, 8 hybrid (AI draft + human approve), 5 human-only\n- **Memory architecture designed:** Shared Supabase `agent_memory` table with RLS — every agent reads context from the same source\n- **Trigger map built:** Each agent's activation conditions, output format, and escalation paths defined before any code written\n\nAI Maturity Score (self-assessment): **22/100 at baseline** — full manual operation, no memory layer, no structured routing.\n\n### O — Orchestrate (5 days)\n\nSystem architecture designed:\n\n```\nTelegram input\n    ↓\nHermes (WF25) — classifies intent, routes\n    ↓\nOpenClaw V2 (WF22) — primary AI processor\n    ↓\n    ├── ARIA — orchestration + daily briefing\n    ├── RADAR — TED tender intelligence\n    ├── HUNTER — sales outreach + proposals\n    ├── SIGNAL — content pipeline\n    ├── FORGE — delivery ops\n    ├── SHIELD — compliance review\n    ├── LEDGER — finance + invoicing\n    ├── CORE — DevOps + deployments\n    ├── ECHO — client success\n    ├── ATLAS — calendar + admin (Gmail + Google Drive)\n    └── OPENCLAW — local Ollama for sensitive data\n         ↓\n    Supabase agent_memory (shared context layer)\n         ↓\n    Karpathy Compile (WF20 — weekly) → Pinecone knowledge base\n```\n\nKey design decisions:\n- **Single memory table, all agents write** — RLS prevents cross-contamination, but ARIA can read everything for briefings\n- **Human-in-the-loop on 8 tasks** — Telegram approval gates on proposals, contracts, published content, invoices\n- **Karpathy compile loop** — every agent runs MODIFY→VERIFY→KEEP/DISCARD→COMPILE; Sunday compile condenses week's memory into permanent knowledge\n- **Local fallback** — OPENCLAW (Ollama/Gemma4) handles sensitive data that cannot leave the machine; no US API calls for confidential client content\n\n### O — Operate (12 days)\n\n**21 n8n workflows deployed across 4 categories:**\n\n| Category | Workflows | What they do |\n|----------|-----------|-------------|\n| Core infrastructure | 4 (Hermes, OpenClaw, Telegram, Agent Hub) | All message routing and AI processing |\n| Agent workflows | 11 (one per agent) | Domain-specific tasks, triggered by schedule or Telegram |\n| Business ops | 4 (Tender Intelligence, Cold Outreach, Content Automation, LEDGER Finance) | Revenue-generating activities |\n| Signal | 2 (IG Webhook, IG DM Funnel) | Instagram lead capture |\n\n**4 operator dashboards deployed:**\n- loopcraft.eu — marketing and inbound\n- loopcraft-blueprint.vercel.app — tender intelligence interface\n- loopcraft-crm.vercel.app — agent command center\n- loopcraft-os-hub.vercel.app — internal OS documentation\n\n### P — Prove (30 days post-deployment)\n\n**Operational metrics at 30 days:**\n\n| Metric | Before | After | Change |\n|--------|--------|-------|--------|\n| Time on business operations (non-billable) | 6–8h/day | 1–2h/day (review only) | **−75%** |\n| Tender notices processed | 0 (manual, inconsistent) | Daily automated scan, 8 CPV codes | **∞ → daily** |\n| Proposals drafted | 2–3 days each | 45-minute HUNTER draft | **−94% time** |\n| Content pieces published/week | 0 | 3 LinkedIn + 1 newsletter (when activated) | **Full cadence** |\n| Compliance reviews | Ad hoc | Automated ESPD + GDPR check on every new engagement | **100% coverage** |\n| System uptime | N/A | 99.2% (n8n NSSM service) | **Live** |\n| Memory entries written by agents | 0 | 34 entries in first 30 days | **Active** |\n\n**Time recovered: ~30h/week** — equivalent to one full-time operations hire.\n\n---\n\n## What Was Delivered\n\n- ✅ 11 agent prompts (ARIA, RADAR, HUNTER, SIGNAL, FORGE, SHIELD, LEDGER, CORE, ECHO, ATLAS, OPENCLAW)\n- ✅ 21 n8n workflows (version-controlled JSON exports in `/n8n/`)\n- ✅ Supabase agent memory schema (RLS policies, agent_memory table, Pinecone sync)\n- ✅ 4 operator dashboards (Next.js + Vercel, all static, zero ongoing API cost)\n- ✅ Complete documentation: agent prompts, workflow logic, CLAUDE.md routing table\n- ✅ 100+ operational documents across 12 business departments\n- ✅ ESPD qualification dossier + tender submission template (bid-ready)\n\n---\n\n## Key Learnings\n\n**What worked:**\n- Shared memory table was the critical architectural decision — without it, agents repeat themselves and contradict each other. With it, ARIA's morning brief is genuinely useful.\n- Telegram as the human interface was the right call — no new UI to learn, review gates happen in the flow of existing messaging habits\n- Building own operations first meant every client conversation starts from proof, not pitch\n\n**What we'd do differently:**\n- Deploy PostHog analytics in Week 1, not Week 4 — lost 30 days of baseline data\n- Build the Karpathy compile loop before the agents, not after — the memory layer should precede the agents that fill it\n\n---\n\n## Applicability\n\nThis case study directly applies to:\n- Professional services firms (consulting, legal, accounting) where one or two operators are running the entire business\n- SMEs where operations management is consuming founder time that should go to clients\n- Any organisation with 10+ recurring manual processes that follow predictable logic\n\n**Result benchmark:** A solo operator running this system handles the operational volume of a 3–4 person team.\n\n**Relevant LoopCraft service:** AI-Native Implementation (€18,500–€38,000) · 4–8 weeks · full agent deployment\n\n---\n\n*This case study documents LoopCraft's own internal deployment. Full technical architecture available for qualified prospects under NDA. References: Anton Farias, hello@loopcraftsystems.com*\n"</script>
+  <!-- marked + DOMPurify loaded in order; render fires only after both are ready -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js" integrity="sha384-odPBjvtXVM/5hOYIr3A1dB+flh0c3wAT3bSesIOqEGmyUA4JoKf/YTWy0XKOYAY7" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.11/dist/purify.min.js" integrity="sha384-o44XUELLEnv/iSlA1NWxBweqbD4TSR0qgq2VzVsxtkHS989JJjGKSE9vkfo5MN4K" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var raw  = JSON.parse(document.getElementById('md').textContent);
+      var dirty = marked.parse(raw);
+      document.getElementById('content').innerHTML = DOMPurify.sanitize(dirty);
+    });
+  </script>
+</body>
+</html>
