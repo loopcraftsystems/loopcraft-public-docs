@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://loopcraft-public-docs.vercel.app/sitemap.xml
